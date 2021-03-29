@@ -41,7 +41,7 @@
  */
 
 // Link as plugin library
-#define PURPLE_PLUGINS 1
+#define PURPLE_PLUGINS
 
 #include <string.h>
 
@@ -197,19 +197,19 @@ static PurplePluginProtocolInfo threepl_protocol_info =
   NULL                                 /* add_buddies_with_invite */
 };
 
-static void threepl_init(PurplePlugin *plugin) {
-    static PurplePluginInfo threepl_plugin_info = {
-        PURPLE_PLUGIN_MAGIC,
-        PURPLE_MAJOR_VERSION,
-        PURPLE_MINOR_VERSION,
-        PURPLE_PLUGIN_PROTOCOL,
-        NULL,
-        0x00,
-        NULL,
-        PURPLE_PRIORITY_DEFAULT,
-        0x00
-    };
+static PurplePluginInfo threepl_plugin_info = {
+    PURPLE_PLUGIN_MAGIC,
+    PURPLE_MAJOR_VERSION,
+    PURPLE_MINOR_VERSION,
+    PURPLE_PLUGIN_PROTOCOL,
+    NULL,
+    0x00,
+    NULL,
+    PURPLE_PRIORITY_DEFAULT,
+    0x00
+};
 
+static void threepl_init(PurplePlugin *plugin) {
     plugin->info = &threepl_plugin_info;
 
     //TODO, these must be constants (also for Command.cpp)
@@ -255,9 +255,21 @@ static void threepl_destroy(PurplePlugin *plugin) {
     threepl::deinit_logging();
 }
 
-extern "C" gboolean purple_init_plugin(PurplePlugin *plugin) {
+/*
+extern "C" gboolean init_plugin(PurplePlugin *plugin) {
     threepl::init_logging();
 
     threepl_init(plugin);
     return purple_plugin_register(plugin);
 }
+*/
+
+
+static void threepl_init_plugin(PurplePlugin *plugin) {
+    threepl::init_logging();
+
+    threepl_init(plugin);
+}
+
+
+PURPLE_INIT_PLUGIN(prpl-threepl, threepl_init_plugin, threepl_plugin_info)

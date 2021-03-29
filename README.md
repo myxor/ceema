@@ -1,17 +1,22 @@
 Ceema
 =====
-This is the ceema library, which provides a C++ implementation of the Threema
+This is the ceema library, which provides a C++ implementation of the [Threema](https://threema.ch/)
 communication protocol (and, in the future, a C interface to it). The aim is to
 provide a somewhat simple interface to hook the Threema protocol in client
 applications such as multi-protocol IM clients.
 
-If you are looking for a ready-to-use desktop application, consider
+This is a fork of https://github.com/hbruintjes/ceema which was modified to use
+mbedTLS instead of OpenSSL to be compliant with GPL.
+
+
+If you are looking for a ready-to-use Threema desktop application, consider
 [openMittsu](https://github.com/blizzard4591/openMittsu).
 
 Building
 ========
 Since this is CMake based, building the library consists of the following steps
 
+    git clone https://github.com/myxor/ceema
     git submodule init
     git submodule sync
     git submodule update --init --recursive
@@ -26,8 +31,9 @@ and libraries):
 
 * `curl`
 * `jsoncpp`
-* `openssl`
+* `mbedTLS`
 * `sodium`
+* `boost`
 
 Library layout
 ==============
