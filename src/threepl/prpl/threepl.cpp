@@ -264,12 +264,10 @@ extern "C" gboolean init_plugin(PurplePlugin *plugin) {
 }
 */
 
-
-static void threepl_init_plugin(PurplePlugin *plugin) {
+extern "C" void threepl_init_plugin(PurplePlugin *plugin) {
     threepl::init_logging();
 
     threepl_init(plugin);
 }
 
-
-PURPLE_INIT_PLUGIN(prpl-threepl, threepl_init_plugin, threepl_plugin_info)
+PURPLE_INIT_PLUGIN(prpl_threepl, threepl_init_plugin, threepl_plugin_info)
