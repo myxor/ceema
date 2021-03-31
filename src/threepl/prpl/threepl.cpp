@@ -255,19 +255,10 @@ static void threepl_destroy(PurplePlugin *plugin) {
     threepl::deinit_logging();
 }
 
-/*
-extern "C" gboolean init_plugin(PurplePlugin *plugin) {
+
+extern "C" gboolean purple_init_plugin(PurplePlugin *plugin) {
     threepl::init_logging();
 
     threepl_init(plugin);
     return purple_plugin_register(plugin);
 }
-*/
-
-extern "C" void threepl_init_plugin(PurplePlugin *plugin) {
-    threepl::init_logging();
-
-    threepl_init(plugin);
-}
-
-PURPLE_INIT_PLUGIN(prpl_threepl, threepl_init_plugin, threepl_plugin_info)
