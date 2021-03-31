@@ -23,6 +23,7 @@ Since this is CMake based, building the library consists of the following steps
     mkdir build && cd build
     cmake ../
     make
+    cp src/libthreepl.so ~/.purple/plugins
 
 Dependencies
 ============
