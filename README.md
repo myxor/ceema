@@ -24,6 +24,7 @@ Since this is CMake based, building the library consists of the following steps
     cmake ../
     make
     cp src/libthreepl.so ~/.purple/plugins
+    sudo cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
 
 Dependencies
 ============
@@ -103,3 +104,8 @@ backup string. Its is a base32 encoded string consisting of a salt and the
 encrypted data. The salt and password generate a hash which can be used to
 decrypt the data, which will yield the client ID, private key, and 2 bytes of
 the SHA-256 hash of both which can be used to validate the decryption.
+
+
+Protocol icon
+=============
+(c) Threema GmbH
