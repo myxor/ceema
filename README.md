@@ -5,8 +5,8 @@ communication protocol (and, in the future, a C interface to it). The aim is to
 provide a somewhat simple interface to hook the Threema protocol in client
 applications such as multi-protocol IM clients.
 
-This is a fork of https://github.com/hbruintjes/ceema which was modified to use
-mbedTLS instead of OpenSSL to be compliant with GPL.
+This is a fork of https://github.com/hbruintjes/ceema.
+It was was modified among other things to use mbedTLS instead of OpenSSL to be compliant with GPL.
 
 
 If you are looking for a ready-to-use Threema desktop application, consider
@@ -31,10 +31,10 @@ Installing as pidgin plugin
     # copy plugin library
     cp src/libthreepl.so ~/.purple/plugins
     # copy protocol icons
-    sudo cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
-    sudo cp icons/threema-app-icon_neutral-22.png /usr/share/pixmaps/pidgin/protocols/22/threema.png
-    sudo cp icons/threema-app-icon_neutral-48.png /usr/share/pixmaps/pidgin/protocols/48/threema.png
-    sudo cp icons/threema-app-icon_neutral.svg /usr/share/pixmaps/pidgin/protocols/scalable/threema.svg
+    cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
+    cp icons/threema-app-icon_neutral-22.png /usr/share/pixmaps/pidgin/protocols/22/threema.png
+    cp icons/threema-app-icon_neutral-48.png /usr/share/pixmaps/pidgin/protocols/48/threema.png
+    cp icons/threema-app-icon_neutral.svg /usr/share/pixmaps/pidgin/protocols/scalable/threema.svg
 
 
 Dependencies
@@ -108,14 +108,29 @@ messages are known:
     * Audio
     * Poll
 
-Backup string
-=============
-The Threema client allows for backup of the private key and client ID using a
+Generate backup string
+=================
+The Threema client allows generation of a backup of the private key and client ID using a
 backup string. Its is a base32 encoded string consisting of a salt and the
-encrypted data. The salt and password generate a hash which can be used to
+encrypted data. See https://threema.ch/en/faq/idexport2 on how to generate this backup string.
+The salt and password generate a hash which can be used to
 decrypt the data, which will yield the client ID, private key, and 2 bytes of
 the SHA-256 hash of both which can be used to validate the decryption.
 
-Protocol icon
-=============
-(c) Threema GmbH
+Login into pidgin
+=================
+1. Activate Threema plugin in pidgin
+2. Create new Threema account
+3. Type in your Threema ID as account username
+4. Type in your backup string password as account password
+5. Copy in the backup string in the appropiate field on the extended account settings page
+
+
+Notices
+=======
+Remember that it is currently not possible to be online with more than one device via Threema.
+See https://threema.ch/en/faq/multidevice.
+
+Protocol icons are taken from [Threema GmbH press material](https://threema.ch/en/press).
+
+This project is not affiliated with Threema GmbH.
