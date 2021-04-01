@@ -23,8 +23,14 @@ Since this is CMake based, building the library consists of the following steps
     mkdir build && cd build
     cmake ../
     make
+
+
+Installing as pidgin plugin
+=================
+
     cp src/libthreepl.so ~/.purple/plugins
     sudo cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
+
 
 Dependencies
 ============
