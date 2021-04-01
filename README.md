@@ -28,8 +28,13 @@ Since this is CMake based, building the library consists of the following steps
 Installing as pidgin plugin
 =================
 
+    # copy plugin library
     cp src/libthreepl.so ~/.purple/plugins
+    # copy protocol icons
     sudo cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
+    sudo cp icons/threema-app-icon_neutral-22.png /usr/share/pixmaps/pidgin/protocols/22/threema.png
+    sudo cp icons/threema-app-icon_neutral-48.png /usr/share/pixmaps/pidgin/protocols/48/threema.png
+    sudo cp icons/threema-app-icon_neutral.svg /usr/share/pixmaps/pidgin/protocols/scalable/threema.svg
 
 
 Dependencies
@@ -110,7 +115,6 @@ backup string. Its is a base32 encoded string consisting of a salt and the
 encrypted data. The salt and password generate a hash which can be used to
 decrypt the data, which will yield the client ID, private key, and 2 bytes of
 the SHA-256 hash of both which can be used to validate the decryption.
-
 
 Protocol icon
 =============
