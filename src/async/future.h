@@ -348,7 +348,7 @@ namespace ceema {
         // invalidate self
         this->m_data = nullptr;
         // return the future associated with type erasing callback
-        return std::move(fut_r);
+        return fut_r;
     }
 
     template<typename U>
@@ -380,7 +380,7 @@ namespace ceema {
         // invalidate self
         this->m_data = nullptr;
         // return the future associated with type erasing callback
-        return std::move(fut_r);
+        return fut_r;
     }
 
 }
