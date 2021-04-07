@@ -6,8 +6,6 @@ provide a somewhat simple interface to hook the Threema protocol in client
 applications such as multi-protocol IM clients.
 
 This is a fork of https://github.com/hbruintjes/ceema.
-It was was modified among other things to use mbedTLS instead of OpenSSL to be compliant with GPL.
-
 
 If you are looking for a ready-to-use Threema desktop application, consider
 [openMittsu](https://github.com/blizzard4591/openMittsu).
@@ -30,9 +28,8 @@ Installing as libpurple plugin for usage with pidgin/chatty
 
 ## Copy plugin library
     cp src/libthreepl.so ~/.purple/plugins
-    
-    
-    
+
+
 ## Copy protocol icons for pidgin
     cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
     cp icons/threema-app-icon_neutral-22.png /usr/share/pixmaps/pidgin/protocols/22/threema.png
