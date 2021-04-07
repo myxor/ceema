@@ -25,12 +25,15 @@ Since this is CMake based, building the library consists of the following steps
     make
 
 
-Installing as pidgin plugin
+Installing as libpurple plugin for usage with pidgin/chatty
 =================
 
-    # copy plugin library
+## Copy plugin library
     cp src/libthreepl.so ~/.purple/plugins
-    # copy protocol icons
+    
+    
+    
+## Copy protocol icons for pidgin
     cp icons/threema-app-icon_neutral-16.png /usr/share/pixmaps/pidgin/protocols/16/threema.png
     cp icons/threema-app-icon_neutral-22.png /usr/share/pixmaps/pidgin/protocols/22/threema.png
     cp icons/threema-app-icon_neutral-48.png /usr/share/pixmaps/pidgin/protocols/48/threema.png
